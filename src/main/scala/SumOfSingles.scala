@@ -1,6 +1,6 @@
 object SumOfSingles extends App {
 
-  def apply(input: List[Int]) : Int ={
+  def applya(input: List[Int]) : Int ={
     if (input.length < 2) throw new Exception("invalid input")
     val numberOfRepeats = input.map(x => input.map(y=> x == y).count(_ == true))
     val OnlydistinctNums = input.zip(numberOfRepeats).filter(x => x._2 ==1).map(_._1)
@@ -16,4 +16,8 @@ object SumOfSingles extends App {
 
   }
 
+  def apply(input: List[Int]) :Int ={
+    if (input.length < 2) throw new Exception("invalid input")
+    2*input.distinct.sum-input.sum
+  }
 }
